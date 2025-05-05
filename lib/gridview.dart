@@ -51,8 +51,8 @@ class Gridview extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("GridView"),
-        backgroundColor: Colors.blueGrey,
-        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 97, 167, 203),
+        foregroundColor: Color.fromARGB(255, 22, 11, 62),
       ),
       body: GridView.builder(
           gridDelegate:
@@ -67,7 +67,7 @@ class Gridview extends StatelessWidget {
                             myItems[index]['img']!, myItems[index]['title']!))),
               child: Card(
             
-                color: const Color.fromARGB(255, 120, 182, 213),
+                color: const Color.fromARGB(255, 97, 167, 203),
                 child: SizedBox(
                   height: 120,
                   child: Column(

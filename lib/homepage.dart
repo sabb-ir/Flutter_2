@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'converter.dart';
+import 'listview.dart';
+import 'gridview.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -29,9 +31,9 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Homepage", style: TextStyle(color: Colors.white)),
-        backgroundColor: const Color.fromARGB(93, 14, 152, 143),
-        foregroundColor: const Color.fromARGB(255, 10, 57, 7),
+        title: Text("Homepage", style: TextStyle(color: Color.fromARGB(255, 22, 11, 62))),
+        backgroundColor: const Color.fromARGB(93, 17, 202, 189),
+        foregroundColor: const Color.fromARGB(255, 22, 11, 62),
         actions: [
           IconButton(
             onPressed: () {
@@ -47,7 +49,7 @@ class Homepage extends StatelessWidget {
           children: [
             DrawerHeader(
               child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.blueGrey),
+                decoration: BoxDecoration(color: const Color.fromARGB(255, 142, 207, 213)),
                 currentAccountPicture: Image.network(
                     "https://res.cloudinary.com/dvsuhuocv/image/upload/v1736877659/bdbfqc16l5k2nhaoc99u.jpg"),
                 currentAccountPictureSize: Size.square(40),
@@ -76,24 +78,56 @@ class Homepage extends StatelessWidget {
             ],),),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: const Color.fromARGB(123, 33, 149, 243),
+        backgroundColor: const Color.fromARGB(122, 8, 57, 96),
         foregroundColor: Colors.white,
         child: Icon(Icons.add),
       ),
-      body: Container(
+      body: Center(
+       child: Container(
         height: 1000,
-        width: 500,
-        alignment: Alignment.topRight,
+        width: 600,
+        alignment: Alignment.center,
         padding: EdgeInsets.all(50),
         margin: EdgeInsets.fromLTRB(80, 50, 0, 70),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(103, 12, 125, 129),
+          color: const Color.fromARGB(103, 34, 109, 248),
           border: Border.all(color: Colors.black, width: 3),
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
-        child: Image.asset('assets/images/pic.jpg'),
-        ),
-      );
-    // );
+        
+        child: Column(
+          
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/flutter.jpg',
+              height: 200, // Set a fixed height for the image
+              fit: BoxFit.cover, // Ensure the image covers the space
+            ),
+            SizedBox(height: 40),
+            // Button to navigate to ListViewPage
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Listview()),
+                );
+              },
+              child: Text("ListView Page"),
+            ),
+            SizedBox(height: 20), // Space between buttons
+            // Button to navigate to GridViewPage
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Gridview()),
+                );
+              },
+              child: Text("GridView Page"),
+            ),
+          ],
+        ),),
+    ),);
   }
 }

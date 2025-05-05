@@ -50,8 +50,8 @@ class Listview extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("List_View"),
-        backgroundColor: Colors.blueGrey,
-        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 97, 167, 203),
+        foregroundColor: Color.fromARGB(255, 22, 11, 62),
       ),
       body: ListView.builder(
           itemCount: myItems.length,
@@ -63,7 +63,7 @@ class Listview extends StatelessWidget {
                         builder: (context) => ListitemPage(
                             myItems[index]['img']!, myItems[index]['title']!))),
               child: Card(
-                color: const Color.fromARGB(255, 107, 122, 217),
+                color: const Color.fromARGB(255, 101, 169, 183),
                 child: SizedBox(
                   height: 120,
                   child: Row(
