@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'converter.dart';
 import 'listview.dart';
 import 'gridview.dart';
+import 'formpage.dart';
+import 'login_page.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
+  
+
 
   mySnackBar(msg, context) {
     return ScaffoldMessenger.of(
@@ -84,13 +88,13 @@ class Homepage extends StatelessWidget {
       ),
       body: Center(
        child: Container(
-        height: 1000,
+        height: 1500,
         width: 600,
         alignment: Alignment.center,
-        padding: EdgeInsets.all(50),
+        padding: EdgeInsets.all(30),
         margin: EdgeInsets.fromLTRB(80, 50, 0, 70),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(103, 34, 109, 248),
+          color: const Color.fromARGB(103, 57, 190, 243),
           border: Border.all(color: Colors.black, width: 3),
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
@@ -98,14 +102,14 @@ class Homepage extends StatelessWidget {
         child: Column(
           
           mainAxisAlignment: MainAxisAlignment.center,
+          
           children: [
             Image.asset(
               'assets/images/flutter.jpg',
-              height: 200, // Set a fixed height for the image
-              fit: BoxFit.cover, // Ensure the image covers the space
+              height: 200, 
+              fit: BoxFit.cover, 
             ),
             SizedBox(height: 40),
-            // Button to navigate to ListViewPage
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -115,8 +119,7 @@ class Homepage extends StatelessWidget {
               },
               child: Text("ListView Page"),
             ),
-            SizedBox(height: 20), // Space between buttons
-            // Button to navigate to GridViewPage
+            SizedBox(height: 20), 
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -125,6 +128,26 @@ class Homepage extends StatelessWidget {
                 );
               },
               child: Text("GridView Page"),
+            ),
+              SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FormPage()),
+                );
+              },
+              child: Text("Register"),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Text("Login"),
             ),
           ],
         ),),
